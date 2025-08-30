@@ -1,0 +1,135 @@
+body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      background: url(waterfall.jpg) no-repeat center center/cover;
+    }
+    body::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  .container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  width: 350px;
+  max-width: 90%;
+  color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
+}
+.container:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 0 30px 10px rgba(1, 46, 21, 0.968), 0 15px 35px rgba(0,0,0,0.3);
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15), rgba(255,255,255,0) 70%);
+  animation: ripple 6s linear infinite;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+.container:hover::before {
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.25), rgba(255,255,255,0) 70%);
+}
+    @keyframes ripple {
+      0% { transform: rotate(0deg) translate(0,0); }
+      50% { transform: rotate(180deg) translate(10px, 10px); }
+      100% { transform: rotate(360deg) translate(0,0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+    }
+
+ 
+    input[type="date"],
+    button {
+      width: 100%;            
+      max-width: 300px;       
+      padding: 12px;
+      margin: 10px auto;      
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      display: block;
+      outline: none;
+    }
+
+    input[type="date"] {
+      background: rgba(255,255,255,0.8);
+      color: #333;
+    }
+
+   button {
+  background: linear-gradient(135deg, #333333, #7d7d7d);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #111111, #5a5a5a); 
+}
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      animation: fadeIn 0.8s ease;
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      top: -10px;
+      animation: fall linear forwards;
+    }
+    @keyframes confettiFall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+      .container {
+        padding: 20px;
+        border-radius: 15px;
+      }
+      input[type="date"], button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
