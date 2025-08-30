@@ -1,6 +1,6 @@
 AGE FINDER 🌟
 
-An interactive and visually stunning Age Finder built with HTML, CSS, and JavaScript. Designed with glassmorphism, cement-hover glow, and confetti animation, perfect for showcasing front-end skills.
+An interactive and visually stunning Age Finder built with HTML, CSS, and JavaScript. Designed with glassmorphism, cement-hover glow, and confetti animation.
 
 🎨 FEATURES :
 
